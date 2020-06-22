@@ -847,8 +847,8 @@ class DriveItem(ApiComponent):
 
         data = response.json()
 
-        # return data.get('link', {}).get('webUrl')
-        return DriveItemPermission(parent=self, **{self._cloud_data_key: data})
+        return data.get('link', {}).get('webUrl')
+        #return DriveItemPermission(parent=self, **{self._cloud_data_key: data})
 
     def share_with_invite(self, recipients, require_sign_in=True,
                           send_email=True, message=None, share_type='view'):
